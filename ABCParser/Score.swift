@@ -12,4 +12,12 @@ class Score{
     var tempo = 120
     var key = "C"
     var tones = [] as [Tone]
+    var rows = [[MusicalSymbol]]()
+    
+    
+    
+    func addRow(symbols:[MusicalSymbol]){
+        rows.append(symbols)
+    }
+    
 }

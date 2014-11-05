@@ -63,9 +63,7 @@ class Parser{
         self.abcScore = abcScore
         parse()
         
-        
     }
-    
     
     
     func parse() -> Score{
@@ -92,13 +90,8 @@ class Parser{
             //TODO
             var bodyLexer = Lexer(string: rows[i])
             
-            bodyLexer.lex()
-            
-            
-
-            
-            //score.add(row)
-            println(rows[i])
+            let scoreRow = bodyLexer.lex()
+            score.addRow(scoreRow)
             
             i++
         }

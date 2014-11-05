@@ -35,7 +35,7 @@ class Lexer{
         
     }
     
-    func lex() -> String{
+    func lex() -> [MusicalSymbol]{
         var score = [MusicalSymbol]()
         
         var row = Array(string)
@@ -63,9 +63,7 @@ class Lexer{
             }
         }
         
-        println(score)
-        
-        return ""
+        return score
     }
     
 }
