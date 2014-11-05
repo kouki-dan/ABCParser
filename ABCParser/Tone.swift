@@ -12,8 +12,9 @@ import Foundation
 
 class Tone : MusicalSymbol{
     var tone = "C"
-    var length = 1
+    var length = Fraction(numerator: 1,denominator: 1)
     init(tone:String, length:String = "1"){
+        super.init()
         self.tone = tone
         self.updateLength(length)
     }
@@ -22,13 +23,8 @@ class Tone : MusicalSymbol{
     func updateLength(length:String){
         self.length = self.parseLength(length)
     }
-    func parseLength(len:String) -> Int{
-        //TODO: Implement!
-        //len.split("/")
-        for char in len{
-            if char(
-        }
+    func parseLength(len:String) -> Fraction{
         
-        return 1
+        return Fraction(stringFraction: len)
     }
 }

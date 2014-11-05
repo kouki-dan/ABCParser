@@ -62,6 +62,8 @@ class Parser{
     init(abcScore:String){
         self.abcScore = abcScore
         parse()
+        
+        
     }
     
     

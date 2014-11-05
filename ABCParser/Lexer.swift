@@ -36,25 +36,35 @@ class Lexer{
     }
     
     func lex() -> String{
+        var score = [MusicalSymbol]()
+        
         var row = Array(string)
         for(var i = 0; i < row.count; i++) {
             let char = String(row[i])
             if(toneSymbols.has(char)) {
-                println(char)
+                score.append(Tone(tone:char))
             }
             else if (musicalSymbols.has(char)){
                 let token = predictSymbol(row, symbols: musicalSymbols, nowPos: i)
-                
                 i += Array(token).count - 1;
-                println(token)
+                
+                score.append(Bar(bar: token))
             }
             else if (lengthSymbols.has(char)){
                 let token = predictSymbol(row, symbols: lengthSymbols, nowPos: i)
-                
-                println(token)
                 i += Array(token).count - 1;
+                
+                //TODO:
+                let lastTone = score[score.count-1] as Tone
+                if( /* lastTone is really tone? */ true){
+                    lastTone.updateLength(token)
+                }
+                
             }
         }
+        
+        println(score)
+        
         return ""
     }
     

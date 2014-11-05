@@ -11,8 +11,8 @@ import Foundation
 
 
 class Bar:MusicalSymbol{
-    let type = "a"
-    override init(){
-        
+    let type:String
+    init(bar:String){
+        type = bar
     }
 }
