@@ -9,7 +9,7 @@
 import Foundation
 
 class Lexer{
-    let toneSymbols = "abcdefgABCDEFG"
+    let toneSymbols = "^=_abcdefgABCDEFG"
     let lengthSymbols = "1234567890/"
     let musicalSymbols = "|:"
     var string:String
@@ -42,7 +42,26 @@ class Lexer{
         for(var i = 0; i < row.count; i++) {
             let char = String(row[i])
             if(toneSymbols.has(char)) {
-                score.append(Tone(tone:char))
+                //TODO: Implement sharp and flat and natural
+                /*The symbols ^, = and _ are used (before a note) to notate respectively a sharp, natural or flat. Double sharps and flats are available with ^^ and __ respectively. */
+                let token = predictSymbol(row, symbols: toneSymbols, nowPos: i)
+                i += Array(token).count - 1;
+                
+                let tone = Tone(tone:String(Array(token).last!))
+                if token.hasPrefix("^"){
+                    //sharp
+                    tone.sharp = true
+                }
+                else if token.hasPrefix("="){
+                    //natural
+                    tone.natural = true
+                }
+                else if token.hasPrefix("_"){
+                    //flat
+                    tone.flat = true
+                }
+                score.append(tone)
+                
             }
             else if (musicalSymbols.has(char)){
                 let token = predictSymbol(row, symbols: musicalSymbols, nowPos: i)

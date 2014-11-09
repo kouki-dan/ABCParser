@@ -11,6 +11,10 @@ import Foundation
 class Fraction{
     let numerator:Int
     let denominator:Int
+    init(num:Int){
+        self.numerator = num
+        self.denominator = 1
+    }
     init(numerator:Int, denominator:Int){
         self.numerator = numerator
         self.denominator = denominator

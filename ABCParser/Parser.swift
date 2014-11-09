@@ -45,13 +45,12 @@ class Parser{
     var abcScore:String
     
     var rows = [] as Array<String>
-    var headers = Dictionary<String,String>()
     
     let headerTable = [
-        "T":"Title",
-        "M":"Meter",
-        "L":"Length",
-        "K":"Key",
+        "T":"title",
+        "M":"meter",
+        "L":"length",
+        "K":"key",
     ]
     
     let toneSymbols = "abcdefgABCDEFG"
@@ -62,7 +61,6 @@ class Parser{
     init(abcScore:String){
         self.abcScore = abcScore
         parse()
-        
     }
     
     
@@ -77,14 +75,28 @@ class Parser{
         
         while headerNow {
             let header = headerParse(rows[i++])
-            if header.key == ""{
+            if header.key == "" {
                 headerNow = false
                 i--;
             }
             else{
-                headers.updateValue(header.val, forKey:header.key)
+                switch header.key{
+                    case "title":
+                        score.setTitle(header.val)
+                    case "length":
+                        score.setLength(header.val)
+                    case "key":
+                        score.setKey(header.val)
+                    case "meter":
+                        score.setMeter(header.val)
+                    default:
+                        true;
+                    
+                }
             }
         }
+        
+        
         
         while i < rows.count{
             //TODO
@@ -119,9 +131,6 @@ class Parser{
         
         return (key, value)
     }
-    
-
-    
     
 }
 

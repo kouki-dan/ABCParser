@@ -9,10 +9,12 @@
 import Foundation
 
 
-
 class Tone : MusicalSymbol{
     var tone = "C"
     var length = Fraction(numerator: 1,denominator: 1)
+    var sharp = false
+    var natural = false
+    var flat = false
     init(tone:String, length:String = "1"){
         super.init()
         self.tone = tone
