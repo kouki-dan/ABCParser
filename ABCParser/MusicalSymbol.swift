@@ -10,4 +10,7 @@ import Foundation
 
 class MusicalSymbol{
     
+    func render(x:Int, y:Int){
+        
+    }
 }

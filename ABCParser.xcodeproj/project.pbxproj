@@ -10,7 +10,7 @@
 		1E47BC801A08DBAF008E6F53 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47BC7F1A08DBAF008E6F53 /* Bar.swift */; };
 		1E47BC821A099A42008E6F53 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47BC811A099A42008E6F53 /* Lexer.swift */; };
 		1E7B818E1A09A11D00A7BD9D /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B818D1A09A11D00A7BD9D /* Fraction.swift */; };
-		1E7B81911A0F8B1500A7BD9D /* Gclef.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B81901A0F8B1500A7BD9D /* Gclef.jpg */; };
+		1E7B81931A138D1400A7BD9D /* Gclef@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B81921A138D1400A7BD9D /* Gclef@2x.png */; };
 		1E9BDAA419FF1E6900217961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA319FF1E6900217961 /* AppDelegate.swift */; };
 		1E9BDAA619FF1E6900217961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA519FF1E6900217961 /* ViewController.swift */; };
 		1E9BDAA919FF1E6900217961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA719FF1E6900217961 /* Main.storyboard */; };
@@ -39,7 +39,7 @@
 		1E47BC7F1A08DBAF008E6F53 /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		1E47BC811A099A42008E6F53 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		1E7B818D1A09A11D00A7BD9D /* Fraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fraction.swift; sourceTree = "<group>"; };
-		1E7B81901A0F8B1500A7BD9D /* Gclef.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gclef.jpg; sourceTree = "<group>"; };
+		1E7B81921A138D1400A7BD9D /* Gclef@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gclef@2x.png"; sourceTree = "<group>"; };
 		1E9BDA9E19FF1E6900217961 /* ABCParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9BDAA219FF1E6900217961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E9BDAA319FF1E6900217961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ABCParser/AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				1E47BC7F1A08DBAF008E6F53 /* Bar.swift */,
 				1E9BDACE19FF20AE00217961 /* MusicalSymbol.swift */,
 				1E7B818D1A09A11D00A7BD9D /* Fraction.swift */,
-				1E7B81901A0F8B1500A7BD9D /* Gclef.jpg */,
+				1E7B81921A138D1400A7BD9D /* Gclef@2x.png */,
 			);
 			path = ABCParser;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9BDAA919FF1E6900217961 /* Main.storyboard in Resources */,
-				1E7B81911A0F8B1500A7BD9D /* Gclef.jpg in Resources */,
+				1E7B81931A138D1400A7BD9D /* Gclef@2x.png in Resources */,
 				1E9BDAAE19FF1E6900217961 /* LaunchScreen.xib in Resources */,
 				1E9BDAAB19FF1E6900217961 /* Images.xcassets in Resources */,
 			);

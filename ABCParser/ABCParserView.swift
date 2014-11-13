@@ -28,19 +28,17 @@ class ABCParserView: UIView {
         score = parser.parse()
         super.init(coder: aDecoder)
         
+        self.backgroundColor = UIColor.brownColor()
     }
     
     
 
     override func drawRect(rect: CGRect) {
-        showScore()
+        self.score.render(self)
+        //showScore()
     }
     
-    func showScore(){
-        
-        
 
-    }
     
 
     /*

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Score{
     var tempo = "Moderate"
@@ -15,7 +16,60 @@ class Score{
     var rows = [[MusicalSymbol]]()
     var length = Fraction(num: 1)
     var meter = "4/4"
+    var targetView:UIView! = nil
 
+    
+    func render(targetView:UIView){
+        self.targetView = targetView
+        showScore()
+    }
+
+    func showScore(){
+        let width = Int(UIScreen.mainScreen().bounds.width)
+        
+        for(var i = 0; i < rows.count; i++){
+            showScoreBase(30 + i*70, width: width-20)
+            
+            putTones(rows[i], y: 30 + i*70, width: width-40)
+        }
+    }
+    
+    func putTones(symbols:[MusicalSymbol], y:Int, width:Int){
+        let toneWidth = width / symbols.count
+        
+        var i = 0
+        for symbol in symbols {
+            symbol.render(40+i*toneWidth, y:y)
+            i+=1
+        }
+        
+    }
+    
+    
+    func showScoreBase(y:Int,width:Int){
+        showGclef(y)
+        for(var i = 0; i < 5; i++){
+            line(y+i*10, width: width)
+        }
+    }
+    
+    func showGclef(y:Int){
+        let a = UIImageView(image: UIImage(named: "Gclef.png"))
+        a.frame = CGRectMake(15, CGFloat(y-10), 20, 60)
+        
+        self.targetView.addSubview(a)
+    }
+    
+    func line(y:Int, width:Int){
+        let path = UIBezierPath()
+        path.moveToPoint(CGPointMake(CGFloat(10), CGFloat(y)))
+        path.addLineToPoint(CGPointMake(CGFloat(10+width), CGFloat(y)))
+        UIColor.blackColor().setStroke()
+        path.lineWidth = 1
+        path.stroke()
+    }
+    
+    
     func addRow(symbols:[MusicalSymbol]){
         rows.append(symbols)
     }
