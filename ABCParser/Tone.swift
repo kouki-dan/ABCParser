@@ -12,10 +12,26 @@ import UIKit
 
 class Tone : MusicalSymbol{
     var tone = "C"
-    var length = Fraction(numerator: 1,denominator: 1)
+    let heightTable = [
+        "g":-1,
+        "f":0,
+        "e":1,
+        "d":2,
+        "c":3,
+        "B":4,
+        "A":5,
+        "G":6,
+        "F":7,
+        "E":8,
+        "D":9,
+        "C":10,
+    ]
+    
+    var length = Fraction(numerator: 1, denominator: 1)
     var sharp = false
     var natural = false
     var flat = false
+    var renderPos:(x:CGFloat, y:CGFloat) = (0.0, 0.0)
     
     init(tone:String, length:String = "1"){
         super.init()
@@ -24,30 +40,51 @@ class Tone : MusicalSymbol{
     }
     
     override func render(x: Int, y: Int) {
-        let circle = UIBezierPath(ovalInRect: CGRectMake(CGFloat(x), CGFloat(y), 13, 9))
         UIColor.blackColor().setFill()
+        UIColor.blackColor().setStroke()
+        
+        renderPos = calcRenderPos(x, y)
+        
+        let circle = UIBezierPath(ovalInRect: CGRectMake(renderPos.x, renderPos.y, 13, 9))
         
         let angle = -30.0 * M_PI / 180.0
         
-        var move = CGAffineTransformMakeTranslation(CGFloat(-x), CGFloat(-y))
+        var move = CGAffineTransformMakeTranslation(-renderPos.x, -renderPos.y)
         let rotate = CGAffineTransformMakeRotation(CGFloat(angle))
         move = CGAffineTransformConcat(move, rotate)
         
-        let move2 = CGAffineTransformMakeTranslation(CGFloat(x), CGFloat(y))
+        let move2 = CGAffineTransformMakeTranslation(renderPos.x, renderPos.y)
         move = CGAffineTransformConcat(move, move2)
         
         circle.applyTransform(move)
         circle.fill()
         
+        
+        if(true/* length bigger than 1/1 or not*/){
+            renderPoll(true)
+            renderPoll(false)
+            
+        }
+        
+    }
+    
+    func calcRenderPos(x:Int, _ y:Int)->(CGFloat, CGFloat){
+        return (CGFloat(x), CGFloat(y))
+    }
+    func renderPoll(direction:Bool){
         let path = UIBezierPath()
-        //path.moveToPoint(CGPointMake(CGFloat(x+10+4), CGFloat(y-1)))
-        //path.addLineToPoint(CGPointMake(CGFloat(x+10+4), CGFloat(y+30)))
-        path.moveToPoint(CGPointMake(CGFloat(x+2), CGFloat(y-1)))
-        path.addLineToPoint(CGPointMake(CGFloat(x+2), CGFloat(y+30)))
-        UIColor.blackColor().setStroke()
+        let x = renderPos.x
+        let y = renderPos.y
+        if(direction){
+            path.moveToPoint(CGPointMake(CGFloat(x+10+4), CGFloat(y-1)))
+            path.addLineToPoint(CGPointMake(CGFloat(x+10+4), CGFloat(y-31)))
+        }
+        else{
+            path.moveToPoint(CGPointMake(CGFloat(x+2), CGFloat(y-1)))
+            path.addLineToPoint(CGPointMake(CGFloat(x+2), CGFloat(y+30)))
+        }
         path.lineWidth = 1
         path.stroke()
-        
     }
     
     
