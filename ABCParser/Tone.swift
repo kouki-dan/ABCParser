@@ -13,6 +13,8 @@ import UIKit
 class Tone : MusicalSymbol{
     var tone = "C"
     let heightTable = [
+        "b":-3,
+        "a":-2,
         "g":-1,
         "f":0,
         "e":1,
@@ -61,15 +63,23 @@ class Tone : MusicalSymbol{
         
         
         if(true/* length bigger than 1/1 or not*/){
-            renderPoll(true)
-            renderPoll(false)
-            
+            if(calcToneYPos() <= toneHeight*4){
+                renderPoll(false)
+            }
+            else{
+                renderPoll(true)
+            }
         }
         
     }
     
+    func calcToneYPos()->Int{
+        return toneHeight*heightTable[tone]!
+    }
+    
     func calcRenderPos(x:Int, _ y:Int)->(CGFloat, CGFloat){
-        return (CGFloat(x), CGFloat(y))
+        let newY = y + calcToneYPos()
+        return (CGFloat(x), CGFloat(newY))
     }
     func renderPoll(direction:Bool){
         let path = UIBezierPath()
@@ -80,8 +90,8 @@ class Tone : MusicalSymbol{
             path.addLineToPoint(CGPointMake(CGFloat(x+10+4), CGFloat(y-31)))
         }
         else{
-            path.moveToPoint(CGPointMake(CGFloat(x+2), CGFloat(y-1)))
-            path.addLineToPoint(CGPointMake(CGFloat(x+2), CGFloat(y+30)))
+            path.moveToPoint(CGPointMake(CGFloat(x+3), CGFloat(y-1)))
+            path.addLineToPoint(CGPointMake(CGFloat(x+3), CGFloat(y+30)))
         }
         path.lineWidth = 1
         path.stroke()

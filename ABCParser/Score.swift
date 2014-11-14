@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//prev 10 to toneHeight*2
+let toneHeight = 5
 
 class Score{
     var tempo = "Moderate"
@@ -50,7 +52,7 @@ class Score{
     func showScoreBase(y:Int,width:Int){
         showGclef(y)
         for(var i = 0; i < 5; i++){
-            line(y+i*10, width: width)
+            line(y+i*toneHeight*2, width: width)
         }
     }
     
