@@ -18,6 +18,10 @@ class Fraction{
     init(numerator:Int, denominator:Int){
         self.numerator = numerator
         self.denominator = denominator
+        
+        let hcf = self.findHCF()
+        self.numerator /= hcf
+        self.denominator /= hcf
     }
     init(stringFraction:String){
         var buf:String = ""
@@ -45,10 +49,25 @@ class Fraction{
         
         self.numerator = numerator
         self.denominator = denominator
-        
-        
     }
     
+    func graterThan(that:Fraction) -> Bool {
+        return Double(self.numerator) / Double(self.denominator) >= Double(that.numerator) / Double(that.denominator)
+    }
+
+    func times(right: Fraction) -> Fraction {
+        let numerator = self.numerator * right.numerator
+        let denomitor = self.denominator * right.denominator
+    
+        return Fraction(numerator: numerator, denominator: denomitor)
+    }
+
+    func minus(right:Fraction) -> Fraction {
+        let numerator = self.numerator * right.denominator - right.numerator * self.denominator
+        let denominator = self.denominator * right.denominator
+        
+        return Fraction(numerator: numerator, denominator: denominator)
+    }
     
     func findHCF() -> Int {
         for var i=max(numerator, denominator); i>=1; i-- {

@@ -19,8 +19,8 @@ class Bar:MusicalSymbol{
     
     override func render(x: Int, y: Int) {
         let path = UIBezierPath()
-        path.moveToPoint(CGPointMake(CGFloat(x), CGFloat(y)))
-        path.addLineToPoint(CGPointMake(CGFloat(x), CGFloat(y+40)))
+        path.moveToPoint(CGPointMake(CGFloat(x+10), CGFloat(y)))
+        path.addLineToPoint(CGPointMake(CGFloat(x+10), CGFloat(y+40)))
         UIColor.blackColor().setStroke()
         path.lineWidth = 1
         path.stroke()

@@ -23,7 +23,8 @@ class ABCParserView: UIView {
                        "|: C C G G | A A G2 | F F E E | D D C2 :|\n" +
                        "c c g g | a a g2 | f f e e | d d c2 |\n" +
                        "|: C1/2 C1/2 C1/2 C1/2 G2 | A1/2 A1/2 A1/2 A1/2 G2 | F1/2 z1/2 F 1/2 z1/2 E E | D D C2 :|\n" +
-                       "C1/4 ^C1/4 D1/4 _E1/4 =E1/4 F1/4 ^F1/2 G1/2 z1/2 | \n"
+                       "C1/4 ^C1/4 D1/4 _E1/4 =E1/4 F1/4 ^F1/2 G1/2 z1/2 |G4|F4|z C z C\n"
+        
 
         parser = Parser(abcScore: abcScore)
         score = parser.parse()

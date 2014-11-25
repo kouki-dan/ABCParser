@@ -9,12 +9,14 @@
 import Foundation
 
 class Lexer{
-    let toneSymbols = "^=_abcdefgABCDEFG"
+    let toneSymbols = "^=_abcdefgABCDEFGzZ"
     let lengthSymbols = "1234567890/"
     let musicalSymbols = "|:"
     var string:String
-    init(string:String){
+    let baseLength:Fraction
+    init(string:String, baseLength:Fraction = Fraction(num: 1)){
         self.string = string
+        self.baseLength = baseLength
     }
     
     func predictSymbol(row:[Character],symbols:String, nowPos:Int) -> String{
@@ -47,7 +49,7 @@ class Lexer{
                 let token = predictSymbol(row, symbols: toneSymbols, nowPos: i)
                 i += Array(token).count - 1;
                 
-                let tone = Tone(tone:String(Array(token).last!))
+                let tone = Tone(tone:String(Array(token).last!), baseLength:baseLength)
                 if token.hasPrefix("^"){
                     //sharp
                     tone.sharp = true
@@ -76,7 +78,7 @@ class Lexer{
                 //TODO:
                 let lastTone = score[score.count-1] as Tone
                 if( /* lastTone is really tone? */ true){
-                    lastTone.updateLength(token)
+                    lastTone.updateLength(token, baseLength:baseLength)
                 }
                 
             }

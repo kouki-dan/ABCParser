@@ -53,7 +53,7 @@ class Parser{
         "K":"key",
     ]
     
-    let toneSymbols = "abcdefgABCDEFG"
+    let toneSymbols = "abcdefgABCDEFGzZ"
     let lengthSymbols = "1234567890/"
     let musicalSymbols = "|:"
     
@@ -100,7 +100,7 @@ class Parser{
         
         while i < rows.count{
             //TODO
-            var bodyLexer = Lexer(string: rows[i])
+            var bodyLexer = Lexer(string: rows[i], baseLength:score.length)
             
             let scoreRow = bodyLexer.lex()
             score.addRow(scoreRow)
