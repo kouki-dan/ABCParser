@@ -48,7 +48,6 @@ class Score{
         
     }
     
-    
     func showScoreBase(y:Int,width:Int){
         showGclef(y)
         for(var i = 0; i < 5; i++){
@@ -71,7 +70,6 @@ class Score{
         path.lineWidth = 1
         path.stroke()
     }
-    
     
     func addRow(symbols:[MusicalSymbol]){
         rows.append(symbols)

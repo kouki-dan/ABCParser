@@ -37,6 +37,7 @@ class Tone : MusicalSymbol{
     var flat = false
     var renderPos:(x:CGFloat, y:CGFloat) = (0.0, 0.0)
     var direction:Bool!
+    var selected = false
     
     init(tone:String, length:String = "1", baseLength:Fraction = Fraction(num:1)){
         super.init()
@@ -91,15 +92,21 @@ class Tone : MusicalSymbol{
             println("are?")
         }
 
-        
- 
-
-        
+    }
+    
+    func getColor()->UIColor{
+        if selected{
+            return UIColor.redColor()
+        }
+        return UIColor.blackColor()
     }
     
     override func render(x: Int, y: Int) {
         UIColor.blackColor().setFill()
         UIColor.blackColor().setStroke()
+        
+        getColor().setFill()
+        getColor().setStroke()
         
         renderPos = calcRenderPos(x, y)
         
