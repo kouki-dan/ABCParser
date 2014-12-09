@@ -21,7 +21,7 @@ class Score{
     var meter = "4/4"
     var targetView:UIView! = nil
 
-    
+
     func render(targetView:UIView){
         self.targetView = targetView
         showScore()
@@ -53,6 +53,19 @@ class Score{
         for(var i = 0; i < 5; i++){
             line(y+i*toneHeight*2, width: width)
         }
+    }
+    
+    func getAllTones() -> [Tone]{
+        var tones:[Tone] = []
+        for row in rows {
+            for penedictTone in row {
+                if penedictTone.className == "Tone" {
+                    tones.append(penedictTone as Tone)
+                }
+            }
+        }
+        
+        return tones
     }
     
     func showGclef(y:Int){

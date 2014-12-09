@@ -12,7 +12,7 @@ import UIKit
 
 
 class Bar:MusicalSymbol{
-    let type:String
+    var type:String
     init(bar:String){
         type = bar
     }

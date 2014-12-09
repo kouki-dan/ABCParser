@@ -31,6 +31,13 @@ class Tone : MusicalSymbol{
         "Z":4,
     ]
     
+    
+    override var className: String  {
+        get {
+            return "Tone"
+        }
+    }
+    
     var length = Fraction(numerator: 1, denominator: 1)
     var sharp = false
     var natural = false
@@ -102,11 +109,12 @@ class Tone : MusicalSymbol{
     }
     
     override func render(x: Int, y: Int) {
-        UIColor.blackColor().setFill()
-        UIColor.blackColor().setStroke()
-        
         getColor().setFill()
         getColor().setStroke()
+        
+        if(selected){
+            println("OK")
+        }
         
         renderPos = calcRenderPos(x, y)
         

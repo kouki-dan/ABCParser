@@ -10,6 +10,12 @@ import Foundation
 
 class MusicalSymbol{
     
+    var className: String  {
+        get {
+            return "MysicalSymbol"
+        }
+    }
+    
     func render(x:Int, y:Int){
         
     }

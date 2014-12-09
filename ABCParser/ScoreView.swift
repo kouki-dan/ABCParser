@@ -10,6 +10,8 @@ import UIKit
 
 class ScoreView: ABCParserView {
     
+    
+    
 
     /*
     // Only override drawRect: if you perform custom drawing.
