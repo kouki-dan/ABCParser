@@ -12,7 +12,7 @@
 		1E7B818E1A09A11D00A7BD9D /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B818D1A09A11D00A7BD9D /* Fraction.swift */; };
 		1E7B81931A138D1400A7BD9D /* Gclef@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B81921A138D1400A7BD9D /* Gclef@2x.png */; };
 		1E9BDAA419FF1E6900217961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA319FF1E6900217961 /* AppDelegate.swift */; };
-		1E9BDAA619FF1E6900217961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA519FF1E6900217961 /* ViewController.swift */; };
+		1E9BDAA619FF1E6900217961 /* ABCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA519FF1E6900217961 /* ABCViewController.swift */; };
 		1E9BDAA919FF1E6900217961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BDAA719FF1E6900217961 /* Main.storyboard */; };
 		1E9BDAAB19FF1E6900217961 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BDAAA19FF1E6900217961 /* Images.xcassets */; };
 		1E9BDAAE19FF1E6900217961 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9BDAAC19FF1E6900217961 /* LaunchScreen.xib */; };
@@ -43,7 +43,7 @@
 		1E9BDA9E19FF1E6900217961 /* ABCParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9BDAA219FF1E6900217961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E9BDAA319FF1E6900217961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ABCParser/AppDelegate.swift; sourceTree = "<group>"; };
-		1E9BDAA519FF1E6900217961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ABCParser/ViewController.swift; sourceTree = "<group>"; };
+		1E9BDAA519FF1E6900217961 /* ABCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ABCViewController.swift; path = ABCParser/ABCViewController.swift; sourceTree = "<group>"; };
 		1E9BDAA819FF1E6900217961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E9BDAAA19FF1E6900217961 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ABCParser/Images.xcassets; sourceTree = "<group>"; };
 		1E9BDAAD19FF1E6900217961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				1E9BDAA319FF1E6900217961 /* AppDelegate.swift */,
-				1E9BDAA519FF1E6900217961 /* ViewController.swift */,
+				1E9BDAA519FF1E6900217961 /* ABCViewController.swift */,
 				1E9BDACC19FF202D00217961 /* ScoreView.swift */,
 				1E9BDAA719FF1E6900217961 /* Main.storyboard */,
 				1E9BDAAA19FF1E6900217961 /* Images.xcassets */,
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9BDAC419FF1E9A00217961 /* Parser.swift in Sources */,
-				1E9BDAA619FF1E6900217961 /* ViewController.swift in Sources */,
+				1E9BDAA619FF1E6900217961 /* ABCViewController.swift in Sources */,
 				1E9BDACF19FF20AE00217961 /* MusicalSymbol.swift in Sources */,
 				1E9BDACA19FF1FC800217961 /* ABCParserView.swift in Sources */,
 				1E47BC821A099A42008E6F53 /* Lexer.swift in Sources */,

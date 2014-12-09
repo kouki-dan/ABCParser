@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ABCViewController: UIViewController {
 
     @IBOutlet weak var scoreView: ScoreView!
     var tones:[Tone] = []
